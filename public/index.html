@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All-in-One Vault</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="auth" class="card">
+    <h1>🔐 All-in-One Vault</h1>
+    <input id="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
+    <div class="row">
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      <h1>🏛️ All-in-One Vault</h1>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <section class="card">
+      <h2>📄 My Documents</h2>
+      <div id="docsList"></div>
+      <details>
+        <summary>➕ Add Document</summary>
+        <input id="docLabel" placeholder="Label (e.g. Aadhaar)" />
+        <input id="docType" placeholder="Type (aadhaar/pan/income/...)" />
+        <textarea id="docData" placeholder='JSON: {"name":"Rahul","aadhaar":"1234"}'></textarea>
+        <button onclick="addDoc()">Save</button>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>🤖 AI Form Filler</h2>
+      <select id="formType">
+        <option value="pm-kisan">PM-KISAN</option>
+        <option value="scholarship">National Scholarship</option>
+      </select>
+      <button onclick="aiFill()">Auto-Fill Form</button>
+      <div id="formArea"></div>
+    </section>
+
+    <section class="card">
+      <h2>🔎 Consent Log</h2>
+      <div id="consentList"></div>
+    </section>
+
+    <section class="card">
+      <h2>📤 Submitted Forms</h2>
+      <div id="formsList"></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
